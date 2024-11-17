@@ -41,21 +41,3 @@ VITE_BACKEND_URL=http://localhost:3000
 
 Substitua http://localhost:3000 pelo URL da sua API backend, se necessário.
 npm install
-
-Start the development server:
-
-    npm run dev
-
-Environment Variables
-
-Create a .env file in the root directory with the following variables:
-
-VITE_BACKEND_URL=http://localhost:3000
-
-Replace http://localhost:3000 with your backend API URL if needed.
-Usage
-
-    Start the backend API (refer to the backend's README).
-    Access the frontend in your browser:
-
-http://localhost:5173
