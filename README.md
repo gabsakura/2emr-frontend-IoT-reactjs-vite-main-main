@@ -1,35 +1,45 @@
-Frontend README.md
+Frontend de Monitoramento de Sensores IoT
 
-# IoT Sensor Monitoring Frontend
+Este projeto é o frontend do sistema de Monitoramento de Sensores IoT, desenvolvido com React e Vite. Ele fornece um painel em tempo real para visualizar dados de sensores, como temperatura, ocupação e iluminação em vários ambientes.
+Funcionalidades
 
-This project is the **frontend** for the IoT Sensor Monitoring system, built with React and Vite. It provides a real-time dashboard to visualize sensor data such as temperature, occupancy, and lighting for multiple rooms.
+    Visualização de dados em tempo real utilizando Chart.js.
+    Controles interativos para o estado das salas (luz, ar-condicionado, ocupação).
+    Design responsivo para exibição de múltiplos ambientes.
+    Integração com a API do backend para obtenção de dados dos sensores.
 
-## Features
+Tecnologias Utilizadas
 
-- Real-time data visualization using **Chart.js**.
-- Interactive controls for room state (light, AC, occupancy).
-- Responsive design for multiple room displays.
-- Integration with the backend API for sensor data.
+    React: Framework para desenvolvimento do frontend.
+    Vite: Ferramenta de construção para desenvolvimento rápido.
+    Chart.js: Biblioteca de gráficos para visualização de dados.
+    CSS/Styled Components: Para estilização.
 
-## Tech Stack
+Instalação
 
-- **React**: Frontend framework.
-- **Vite**: Build tool for fast development.
-- **Chart.js**: Graph library for visualization.
-- **CSS/Styled Components**: For styling.
+    Clone o repositório:
 
-## Installation
+git clone https://github.com/gabsakura/Front-end.git
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/gabsakura/Front-end.git
-
-    Navigate to the project directory:
+Acesse o diretório do projeto:
 
 cd Front-end
 
-Install dependencies:
+Instale as dependências:
 
+npm install
+
+Inicie o servidor de desenvolvimento:
+
+    npm run dev
+
+Variáveis de Ambiente
+
+Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
+
+VITE_BACKEND_URL=http://localhost:3000
+
+Substitua http://localhost:3000 pelo URL da sua API backend, se necessário.
 npm install
 
 Start the development server:
