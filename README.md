@@ -23,11 +23,11 @@ git clone https://github.com/gabsakura/Front-end.git
 
 Acesse o diretório do projeto:
 
-cd Front-end
+    CD Front-end
 
 Instale as dependências:
 
-npm install
+    npm install
 
 Inicie o servidor de desenvolvimento:
 
@@ -37,7 +37,7 @@ Variáveis de Ambiente
 
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
-VITE_BACKEND_URL=http://localhost:3000
+    VITE_BACKEND_URL=http://localhost:3000
 
 Substitua http://localhost:3000 pelo URL da sua API backend, se necessário.
-npm install
+
