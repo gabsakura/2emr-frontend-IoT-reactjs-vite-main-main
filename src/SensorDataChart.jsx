@@ -17,11 +17,16 @@ const SensorDataChart = () => {
   };
 
   const sendSensorData = async (sensorId, roomState) => {
-    // Define a temperatura conforme a ocupação e estado do AC
-    const temperatura =
-      roomState.occupancy && roomState.ac
-        ? Math.random() * (22 - 18) + 18 // Temperatura entre 18°C e 22°C
-        : Math.random() * 50; // Temperatura aleatória padrão
+    // Define temperatura dentro da faixa habitável (6°C a 30°C)
+    const temperatura = Math.min(
+      Math.max(
+        roomState.occupancy && roomState.ac
+          ? Math.random() * (22 - 18) + 18 // 18°C a 22°C se AC ligado
+          : Math.random() * 50, // Temperatura aleatória
+        6
+      ),
+      30
+    );
 
     const dadosSensor = {
       sensor_id: sensorId,
@@ -210,6 +215,10 @@ const SensorDataChart = () => {
   }, [sensorData, isLoading]);
 
   const toggleLight = (roomId) => {
+    if (!roomStates[roomId]?.occupancy) {
+      console.log(`A sala ${roomId} está desocupada. Não é possível ligar a luz.`);
+      return;
+    }
     setRoomStates((prevStates) => ({
       ...prevStates,
       [roomId]: {
@@ -232,6 +241,12 @@ const SensorDataChart = () => {
   };
 
   const toggleAc = (roomId) => {
+    if (!roomStates[roomId]?.occupancy) {
+      console.log(
+        `A sala ${roomId} está desocupada. Não é possível ligar o ar-condicionado.`
+      );
+      return;
+    }
     setRoomStates((prevStates) => ({
       ...prevStates,
       [roomId]: {
